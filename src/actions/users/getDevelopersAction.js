@@ -6,15 +6,11 @@ import User from "@/models/User";
 export async function getDevelopersAction() {
   await dbConnect();
 
-  const developers = await User.find(
-    {
-      role: "Developer",
-    },
-    {
-      name: 1,
-      email: 1,
-    }
-  ).lean();
+  const developers = await User.find({
+    role: "Developer",
+  }).lean();
+
+  console.log("Developers:", developers);
 
   return JSON.parse(JSON.stringify(developers));
 }
