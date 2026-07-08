@@ -14,24 +14,27 @@ export default async function BugTable({ searchParams }) {
   });
 
   return (
-    <div className="overflow-hidden rounded-3xl border border-zinc-800 bg-zinc-900">
+    <div className="rounded-3xl border border-zinc-800 bg-zinc-900">
 
-      <table className="w-full">
+      <div className="overflow-x-auto">
 
-        {/* keep your existing table header */}
+        <table className="min-w-[900px] w-full">
 
-        <tbody>
+          {/* keep your existing table header */}
 
-          {result.bugs.map((bug) => (
-            <BugRow
-              key={bug._id}
-              bug={bug}
-            />
-          ))}
+          <tbody>
 
-        </tbody>
+            {result.bugs.map((bug) => (
+              <BugRow
+                key={bug._id}
+                bug={bug}
+              />
+            ))}
 
-      </table>
+          </tbody>
+
+        </table>
+      </div>
 
       <Pagination
         page={result.page}

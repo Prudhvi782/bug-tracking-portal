@@ -4,11 +4,12 @@ import { Search, Plus } from "lucide-react";
 export default function BugToolbar({ searchParams }) {
   return (
     <div className="space-y-6">
-      <div className="flex justify-between">
+
+      <div className="flex flex-col gap-4 lg:flex-row lg:items-start lg:justify-between">
 
         <form
           method="GET"
-          className="grid flex-1 gap-4 md:grid-cols-5"
+          className="grid flex-1 gap-4 md:grid-cols-2 lg:grid-cols-5"
         >
           <div className="relative">
 
@@ -64,7 +65,7 @@ export default function BugToolbar({ searchParams }) {
 
           <button
             type="submit"
-            className="rounded-xl bg-blue-600 text-white hover:bg-blue-700"
+            className="rounded-xl bg-blue-600 text-white hover:bg-blue-700 h-12"
           >
             Search
           </button>
@@ -72,12 +73,14 @@ export default function BugToolbar({ searchParams }) {
 
         <Link
           href="/bugs/create"
-          className="ml-4 flex h-12 items-center gap-2 rounded-xl bg-emerald-600 px-5 text-white hover:bg-emerald-700"
+          className="flex h-12 w-full items-center justify-center gap-2 rounded-xl bg-emerald-600 px-5 text-white hover:bg-emerald-700 lg:ml-4 lg:w-auto"
         >
           <Plus size={18} />
           Report Bug
         </Link>
+
       </div>
+
     </div>
   );
 }

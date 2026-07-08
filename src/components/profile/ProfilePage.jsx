@@ -22,31 +22,26 @@ export default async function ProfilePage() {
 
   const stats = await getProfileStatsAction();
 
-  return (
-    <div className="space-y-8">
+return (
+  <div className="space-y-6">
 
-      <div>
+    <div>
+      <h1 className="text-3xl font-bold text-white sm:text-4xl lg:text-5xl">
+        My Profile
+      </h1>
 
-        <h1 className="text-5xl font-bold text-white">
-          My Profile
-        </h1>
-
-        <p className="mt-2 text-zinc-400">
-          View your profile information and recent activity.
-        </p>
-
-      </div>
-
-      <ProfileCard user={user} />
-
-      <div className="grid gap-6 lg:grid-cols-2">
-
-        <StatsCard stats={stats} />
-
-        <ActivityCard user={user} />
-
-      </div>
-
+      <p className="mt-2 text-sm text-zinc-400 sm:text-base">
+        View your profile information and recent activity.
+      </p>
     </div>
-  );
+
+    <ProfileCard user={user} />
+
+    <div className="grid gap-6 lg:grid-cols-2">
+      <StatsCard stats={stats} />
+      <ActivityCard user={user} />
+    </div>
+
+  </div>
+);
 }

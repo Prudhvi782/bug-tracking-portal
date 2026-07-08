@@ -13,11 +13,11 @@ export default async function UserTable({ searchParams }) {
   });
 
   return (
-    <div className="overflow-hidden rounded-3xl border border-zinc-800 bg-zinc-900">
+    <div className="rounded-3xl border border-zinc-800 bg-zinc-900">
 
       <div className="overflow-x-auto">
 
-        <table className="w-full">
+        <table className="min-w-[700px] w-full">
 
           <thead className="bg-black">
 

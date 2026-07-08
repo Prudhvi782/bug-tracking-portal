@@ -5,13 +5,12 @@ export default function UserToolbar({ searchParams }) {
   return (
     <div className="space-y-6">
 
-      <div className="flex items-center justify-between">
+      <div className="flex flex-col gap-4 lg:flex-row lg:items-start lg:justify-between">
 
         <form
           method="GET"
           className="grid flex-1 gap-4 md:grid-cols-2"
         >
-
           <div className="relative">
 
             <Search
@@ -33,22 +32,10 @@ export default function UserToolbar({ searchParams }) {
             defaultValue={searchParams?.role || ""}
             className="h-12 rounded-xl border border-zinc-700 bg-zinc-900 px-4 text-white outline-none focus:border-blue-500"
           >
-            <option value="">
-              All Roles
-            </option>
-
-            <option value="Developer">
-              Developer
-            </option>
-
-            <option value="Tester">
-              Tester
-            </option>
-
-            <option value="Admin">
-              Admin
-            </option>
-
+            <option value="">All Roles</option>
+            <option value="Developer">Developer</option>
+            <option value="Tester">Tester</option>
+            <option value="Admin">Admin</option>
           </select>
 
           <button
@@ -57,12 +44,11 @@ export default function UserToolbar({ searchParams }) {
           >
             Search
           </button>
-
         </form>
 
         <Link
           href="/users/create"
-          className="ml-4 flex h-12 items-center gap-2 rounded-xl bg-emerald-600 px-5 text-white hover:bg-emerald-700"
+          className="flex h-12 w-full items-center justify-center gap-2 rounded-xl bg-emerald-600 px-5 text-white hover:bg-emerald-700 lg:ml-4 lg:w-auto"
         >
           <Plus size={18} />
           Add User

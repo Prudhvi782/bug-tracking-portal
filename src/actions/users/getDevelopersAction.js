@@ -7,7 +7,7 @@ export async function getDevelopersAction() {
   await dbConnect();
 
   const developers = await User.find({
-    role: "Developer",
+    role: "Developer",  
   }).lean();
 
   console.log("Developers:", developers);
